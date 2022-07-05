@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "ca39a7a5-ca1c-4659-b390-13e2a6d10f6f",
+		"name": "Vendor Machine Control",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21640044"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLcmlzIiwiZXhwIjoxNjU3MjE5MDQ5LCJpYXQiOjE2NTY5NTk4NDl9._XMY35fKS80YQSgmHaTolFaP591-vOlzIiFBrgOCK_k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user in data base",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLcmlzIiwiZXhwIjoxNjU3MjE5MDQ5LCJpYXQiOjE2NTY5NTk4NDl9._XMY35fKS80YQSgmHaTolFaP591-vOlzIiFBrgOCK_k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"username\": \"Ivan\",\r\n        \"password\": \"123456\",\r\n        \"deposit\": 100,\r\n        \"totalSpent\": 0,\r\n        \"role\": \"BUYER\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with username and password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjIzODUzLCJpYXQiOjE2NTY5NjQ2NTN9.qy0yB-_yPP48h6GL4Khyj3lKRyvHstaUMivEXapz6nk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Ivan\",\r\n    \"password\":123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjIzODUzLCJpYXQiOjE2NTY5NjQ2NTN9.qy0yB-_yPP48h6GL4Khyj3lKRyvHstaUMivEXapz6nk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product by seller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLcmlzIiwiZXhwIjoxNjU3MjI3Nzk0LCJpYXQiOjE2NTY5Njg1OTR9.8l-80jz2ZvpWNf8ks3h3zLoq8mbSFIcmf0Eayb54yLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productName\":\"Fanta\",\r\n  \"amountAvailable\": 20,\r\n  \"cost\":500,\r\n  \"seller\":{\r\n      \"id\":1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a product by the seller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLcmlzIiwiZXhwIjoxNjU3MjI3Nzk0LCJpYXQiOjE2NTY5Njg1OTR9.8l-80jz2ZvpWNf8ks3h3zLoq8mbSFIcmf0Eayb54yLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Fanta\",\r\n    \"amountAvailable\": 30,\r\n    \"cost\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/603",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"603"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product by the sellser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLcmlzIiwiZXhwIjoxNjU3MjI3Nzk0LCJpYXQiOjE2NTY5Njg1OTR9.8l-80jz2ZvpWNf8ks3h3zLoq8mbSFIcmf0Eayb54yLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/603",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"603"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer role can deposit only 5,10,20,50,100 cent coins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjcxODQ0LCJpYXQiOjE2NTcwMTI2NDR9.RCCQ6R5ucu3h3P-3MTBUd6qG35ffMBmqoQayfPukEWI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Ivan\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/deposit/2/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"deposit",
+						"2",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjcxODQ0LCJpYXQiOjE2NTcwMTI2NDR9.RCCQ6R5ucu3h3P-3MTBUd6qG35ffMBmqoQayfPukEWI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/resetDeposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"resetDeposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset the deposit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjcxODQ0LCJpYXQiOjE2NTcwMTI2NDR9.RCCQ6R5ucu3h3P-3MTBUd6qG35ffMBmqoQayfPukEWI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/resetDeposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"resetDeposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log out",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJdmFuIiwiZXhwIjoxNjU3MjIzODUzLCJpYXQiOjE2NTY5NjQ2NTN9.qy0yB-_yPP48h6GL4Khyj3lKRyvHstaUMivEXapz6nk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
